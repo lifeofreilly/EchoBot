@@ -1,7 +1,5 @@
 package com.gmail.lifeofreilly.tweetbot;
 
-import java.lang.Thread;
-
 import org.apache.log4j.Logger;
 
 /**
@@ -15,15 +13,14 @@ import org.apache.log4j.Logger;
  */
 public class BotRunner {
 
-	private final static Logger log = Logger.getLogger(BotRunner.class);
-    
+    private final static Logger log = Logger.getLogger(BotRunner.class);
+
     /**
      * Starts ReplyBot and DMBot threads.
      *
      * @param args no arguments required.
      */
-    public static void main( String[] args )
-    {
+    public static void main(String[] args) {
         Thread replyBotThread = new Thread(new ReplyBot());
         Thread dmBotThread = new Thread(new DMBot());
         replyBotThread.start();

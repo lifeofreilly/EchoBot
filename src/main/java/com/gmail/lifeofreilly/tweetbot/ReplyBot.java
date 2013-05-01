@@ -23,7 +23,7 @@ public class ReplyBot extends TwitterBot {
     private String screenName;
     private final static Logger log = Logger.getLogger(ReplyBot.class);
 
-     /**
+    /**
      * Sole constructor.
      */
     public ReplyBot() {

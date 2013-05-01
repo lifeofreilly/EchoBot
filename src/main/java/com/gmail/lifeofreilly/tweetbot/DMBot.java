@@ -1,9 +1,9 @@
 package com.gmail.lifeofreilly.tweetbot;
 
-import java.lang.Runnable;
-import java.util.List;
 import org.apache.log4j.Logger;
 import twitter4j.*;
+
+import java.util.List;
 
 /**
  * Defines the DMBot.
@@ -22,7 +22,7 @@ public class DMBot extends TwitterBot {
     private String screenName;
     private final static Logger log = Logger.getLogger(DMBot.class);
 
-     /**
+    /**
      * Sole constructor.
      */
     public DMBot() {
@@ -40,19 +40,18 @@ public class DMBot extends TwitterBot {
         RateLimitStatusListener rateListener = new RateLimitStatusListenerImpl();
         twitter.addRateLimitStatusListener(rateListener);
         Paging paging = new Paging(1, 10);
-        while(true) {
+        while (true) {
             try {
                 List<DirectMessage> messages = twitter.getDirectMessages(paging);
                 log.info("Processing: " + messages.size() + " Direct Messages.");
                 for (DirectMessage message : messages) {
                     log.info("Direct Message received: " + message.getSenderScreenName() + ": " + message.getText());
                     String dmText = "echo: " + message.getText();
-                    if(!screenName.equalsIgnoreCase(message.getSenderScreenName())) {
+                    if (!screenName.equalsIgnoreCase(message.getSenderScreenName())) {
                         log.info("Sending DM: " + dmText);
                         twitter.sendDirectMessage(message.getSenderScreenName(), dmText);
                         twitter.destroyDirectMessage(message.getId());
-                    }
-                    else {
+                    } else {
                         log.info("Automation Safety Check: Never respond to self to avoid recursive behavior.");
                     }
                 }
