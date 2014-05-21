@@ -3,7 +3,7 @@ EchoBot
 
 A simple twitter bot that echoes solicited requests.
 
-If using or modifying this bot you must adhere to: Automation rules and best practices
+If using or modifying this bot please adhere to: Automation rules and best practices
 https://support.twitter.com/articles/76915-automation-rules-and-best-practices
 
 Prerequisites:
