@@ -11,7 +11,7 @@ Prerequisites:
 
 * JDK 1.5 or higher
 * Maven
-* For aditional dependecny information refer to pom.xml
+* For additional dependency information refer to pom.xml
 * A twitter developer account and application
 
 Build Instructions:
@@ -20,7 +20,7 @@ Build Instructions:
 Building an Executable Jar:
 > mvn package
 
-The excutable jar can be found at: ./target/TweetBot-1.0-SNAPSHOT.jar
+The executable jar can be found at: ./target/TweetBot-1.0-SNAPSHOT.jar
 
 Usage:
 -------------------------
